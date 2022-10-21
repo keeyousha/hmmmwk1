@@ -19,27 +19,13 @@ namespace Task3
         {
             if (x < 0) return 0;
 
-            for (int j = 1; j < x + 1; j *= 2 - 1)
-            {
-                Console.WriteLine("First " + j); 
-                if (x >= j & x < j + 1)
-                    return -1;
-                ++j;
-            }
+            if (x == 0) return 1;
 
-            int i = 0;
-            while (i < x + 1)
-            {
-                if (x >= i & x < i + 1)
-                    return 1;
+            if (x % 2 <= 1) return 1;
 
-                if (i > 0)
-                    i *= 2;
-                else
-                    ++i;
-            }
+            if (x % 2 >= 1) return -1;
 
-            return -9999;
+            else return -2;
         }
 
         /*
@@ -294,13 +280,74 @@ namespace Task3
          */
         internal static String AgeDescription(int age)
         {
-            throw new NotImplementedException();
+            string result;
+
+            switch (age - (age % 10))
+            {
+                case 20:
+                    result = "двадцать ";
+                    break;
+                case 30:
+                    result = "тридцать ";
+                    break;
+                case 40:
+                    result = "сорок ";
+                    break;
+                case 50:
+                    result = "пятьдесят ";
+                    break;
+                case 60:
+                    result = "шестьдесят ";
+                    break;
+                default:
+                    return "err";
+            }
+
+            switch (age % 10)
+            {
+                case 1:
+                    result += "один год";
+                    break;
+                case 2:
+                    result += "два года";
+                    break;
+                case 3:
+                    result += "три года";
+                    break;
+                case 4:
+                    result += "четыре года";
+                    break;
+                case 5:
+                    result += "пять лет";
+                    break;
+                case 6:
+                    result += "шесть лет";
+                    break;
+                case 7:
+                    result += "семь лет";
+                    break;
+                case 8:
+                    result += "восемь лет";
+                    break;
+                case 9:
+                    result += "девять лет";
+                    break;
+                case 0:
+                    result += "лет";
+                    break;
+                default:
+                    return "err";
+            }
+
+            return result;
         }
 
         public static void Main(string[] args)
         {
-            int x = Console.Read();
-            Console.WriteLine(F(x));
+            Console.WriteLine(F(0));
+            Console.WriteLine(NumberOfDays(1332));
+            Console.WriteLine(Rotate2('С', -1, 1));
+            Console.WriteLine(AgeDescription(25));
         }
     }
 }

@@ -27,14 +27,19 @@ public class Tests
     public void Rotate2Test()
     {
         That(Rotate2('С', 1, -1), Is.EqualTo('С'));
-        throw new NotImplementedException("Необходимо добавить больше тестов");
+        That(Rotate2('С', 2, 2), Is.EqualTo('С'));
+        That(Rotate2('В', 1, 1), Is.EqualTo('З'));
+        That(Rotate2('Ю', 2, -1), Is.EqualTo('В'));
+
     }
 
     [Test]
     public void AgeDescriptionTest()
     {
         That(AgeDescription(42), Is.EqualTo("сорок два года"));
-        throw new NotImplementedException("Необходимо добавить больше тестов");
+        That(AgeDescription(21), Is.EqualTo("двадцать один год"));
+        That(AgeDescription(59), Is.EqualTo("пятьдесят девять лет"));
+        That(AgeDescription(35), Is.EqualTo("тридцать пять лет"));
     }
 
     [Test]

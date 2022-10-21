@@ -16,4 +16,8 @@
         <PackageReference Include="coverlet.collector" Version="3.1.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Reference Include="System.Net.Http" />
+    </ItemGroup>
+
 </Project>
